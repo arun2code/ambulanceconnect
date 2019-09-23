@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+                <title>Ambulance Connect</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+
+ <script language="javascript" type="text/javascript">
+
+window.onload = function () {
+    var url = document.location.href,
+        params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split('=');
+         data[tmp[0]] = tmp[1];
+    }
+    document.getElementById('usernamesignup').innerHTML = data.usernamesignup + ' ' + data.usernamesignup2;
+ 
+    document.getElementById('gender').innerHTML = data.gender;
+    document.getElementById('mother').innerHTML = data.mother;
+    document.getElementById('state').innerHTML = data.state;
+    document.getElementById('countrya').innerHTML = data.countrya;
+    document.getElementById('district').innerHTML = data.district;
+    document.getElementById('village').innerHTML = data.village;
+
+}
+
+</script>
+
+    </head>
+    <body>
+        <div class="container">
+            <!-- Codrops top bar -->
+            <div class="codrops-top">
+                
+                <span class="right">
+                    <a href="index.html">
+                        <strong>Home</strong>
+                    </a>
+                </span>
+                <div class="clr"></div>
+            </div><!--/ Codrops top bar -->
+            <header>
+                
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    
+                    <div id="wrapper">
+                           <div id="login" class="animate form">
+                           
+<div style="background-color:#339999;color:white;padding:20px;">
+<h2 style="font-size:200%;">Patient Details</h2>Registered</h2>
+</div>
+<br>        
+
+<h2> Data is saved successfully</h2><br>
+
+ <form name="form1" action="hw_dashboard.html" method="get">
+<table style="width:100%">
+    <tr>
+<td> Name: </td>
+        <td id="usernamesignup">test</td>
+        
+    </tr>
+<tr>
+<td> Gender: </td>
+        <td id="gender">test</td>
+    </tr>
+
+<tr>
+<td> Mother's Name: </td>
+        <td id="mother">test</td>
+    </tr>
+
+<tr>
+<td> State: </td>
+        <td id="state">test</td>
+    </tr>
+
+<tr>
+<td> City: </td>
+        <td id="countrya"></td>
+    </tr>
+
+<tr>
+<td> Block: </td>
+        <td id="district"></td>
+    </tr>
+
+<tr>
+<td> Medical Issues: </td>
+        <td id="village"></td>
+    </tr>
+
+
+</table>
+
+<p class="signin button"> 
+			<input type="submit" value="Done" style="width:50%;"/> 
+								</p>
+                               
+                   
+
+</form>
+
+
+                    
+			</div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>

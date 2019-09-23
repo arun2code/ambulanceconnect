@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+                <title>Ambulance Connect</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+
+
+<script>
+var stateObject = {
+"Delhi": 
+{ "New Delhi": ["MalviyaNagar", "Karolbaug"],
+"Shahadra": ["Brahampuri", "Loni"],
+"Old Delhi": ["Janakpuri", "Dwarka"],
+},
+
+"Uttar Pradesh": {
+"Meerut": ["Mawana", "Kharkhoda", "Partapur"],
+"Ghaziabad": ["Sihani", "Dasna"]
+}, 
+"Madhay Pradesh": {
+"Bhopal": ["Rampur", "Barghat"],
+"Sagar": ["Ratanpur", ""]
+},
+}
+window.onload = function () {
+var countySel = document.getElementById("countySel"),
+stateSel = document.getElementById("stateSel"),
+districtSel = document.getElementById("districtSel");
+for (var country in stateObject) {
+countySel.options[countySel.options.length] = new Option(country, country);
+}
+countySel.onchange = function () {
+stateSel.length = 1; // remove all options bar first
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+for (var state in stateObject[this.value]) {
+stateSel.options[stateSel.options.length] = new Option(state, state);
+}
+}
+countySel.onchange(); // reset in case page is reloaded
+stateSel.onchange = function () {
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+var district = stateObject[countySel.value][this.value];
+for (var i = 0; i < district.length; i++) {
+districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+}
+}
+}
+
+
+</script>
+ <script language="javascript" type="text/javascript" src="data.js"></script>
+
+
+    </head>
+    <body>
+        <div class="container">
+            <!-- Codrops top bar -->
+            <div class="codrops-top">
+                
+                <span class="right">
+                    <a href="index.html">
+                        <strong>Home</strong>
+                    </a>
+                </span>
+                <div class="clr"></div>
+            </div><!--/ Codrops top bar -->
+            <header>
+                
+            </header>
+            <section>	
+ <div id="container_demo" >
+                    
+                    <div id="wrapper">
+
+                        <div id="login" class="animate form">
+		                          
+                            <form  action="ambulancesaved.html" autocomplete="on" method="get"> 
+<div style="background-color:#339999;color:white;padding:20px;">
+<h2 style="font-size:200%;">Add new Ambulance details</h2>
+</div>
+                               <br><br>
+<div class="grid-container-2">
+
+  <div class="grid-item-left">
+<p class="uname">
+<label for="usernamesignup" class="uname">Ambulance Number</label>
+</p>								
+</div>
+  <div class="grid-item-right">
+<p> 
+<input id="ambulance" name="ambulance" required="required" type="text" placeholder="Ambulance number" />
+</p>
+</div>
+
+  <div class="grid-item-left">
+<p class="uname">
+<label for="location" class="uname">Location</label>
+</p>								
+</div>
+  <div class="grid-item-right">
+<p> 
+<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Longitude" />
+<input id="usernamesignup2" name="usernamesignup2" required="required" type="text" placeholder="Latitude" />
+</p>
+</div>
+
+  	<div class="grid-item-left">
+	<p class="uname">
+	<label for="city" class="uname">City</label>
+	</p>								
+	</div>
+  	<div class="grid-item-right">
+		<p> 
+		<select name="city" style="height:30px;" required="required" >
+ 		 <option value="">Select</option>
+  		<option value="Delhi">Delhi</option>
+  		<option value="Noida">Noida</option>
+  		<option value="Ghaziabad">Ghaziabad</option>
+		</select>
+		</p>
+	</div>
+
+ 	<div class="grid-item-left">
+	<p class="uname">
+		<label for="driver" class="uname" > Driver's Name</label>
+	</p>								
+	</div>
+  	<div class="grid-item-right">
+		<p> 
+		 <input id="driver" name="driver" required="required" type="text" placeholder="First Last" /> 
+		</p>
+	</div>
+
+
+ 	<div class="grid-item-left">
+	<p class="uname">
+		 <label for="mobile" class="uname" > Mobile</label>
+	</p>								
+	</div>
+  	<div class="grid-item-right">
+		<p> 
+		 <input id="mobile" name="mobile" required="required" type="text" placeholder="10 digits Number" /> 
+		</p>
+	</div>
+
+
+</div>
+<br>
+<br>
+                                <p class="signin button"> 
+			<input type="submit" value="Submit" style="width:50%;" onClick="testJS()"/> 
+								</p>
+                               
+                            </form>
+ <p class="change_link">  
+									
+				<a href="bn_dashboard.html" class="to_register"> Back</a>
+								</p>
+                        </div>
+
+                    
+
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
